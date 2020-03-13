@@ -883,6 +883,17 @@ select.form-control.has-value{
   letter-spacing: 0.5px;
 }
 
+.device-android .action-btns .btn-ios,
+.device-android .work-process-content .btn-ios {
+    display: none;
+}
+
+.device-ios .action-btns .btn-android,
+.device-ios .work-process-content .btn-android {
+    display: none;
+}
+
+
 .hero-content-left .headline {
     display: inline-block;
     background-color: rgba(255,255,255, .1);
@@ -1803,7 +1814,7 @@ select.form-control.has-value{
 ============================================*/
 
 .scroll-top.open {
-    bottom: 20px;
+    bottom: 60px;
 }
 button.scroll-top:focus{
     outline: none;
