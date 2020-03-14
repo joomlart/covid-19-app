@@ -8368,6 +8368,11 @@ h5, .h5 {
 .ncovi {
   color: #2d3691; }
 
+.hilite {
+  border-bottom: 1px dotted #f9a825;
+  font-weight: 700;
+  color: #f9a825; }
+
 .device-ios .btn-android {
   display: none; }
 
@@ -8521,7 +8526,8 @@ h5, .h5 {
   color: #fff;
   position: relative;
   padding-top: 4rem;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  overflow: hidden; }
   @media (min-width: 992px) {
     .app-hero {
       padding-bottom: 7rem; } }
@@ -8557,7 +8563,9 @@ h5, .h5 {
       color: #fff; }
   .app-hero .hero-footer {
     height: 100px;
-    z-index: 50; }
+    z-index: 50;
+    width: 100%;
+    overflow: hidden; }
   .app-hero .hero-footer img {
     position: absolute;
     left: -1px;
@@ -8713,6 +8721,15 @@ h5, .h5 {
     font-weight: 600;
     margin-bottom: 1rem;
     line-height: 1.5; }
+  .box p {
+    color: #495057;
+    font-size: 15px; }
+  .box a {
+    border-bottom: 1px dotted #007bff; }
+    .box a:hover, .box a:focus, .box a:active {
+      color: #0056b3;
+      border-bottom: 1px solid #0056b3;
+      text-decoration: none; }
 
 .app-footer {
   background-color: #151943;
