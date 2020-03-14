@@ -1,0 +1,600 @@
+// Insert bootstrap
+@import "../vendors/bootstrap/scss/bootstrap";
+
+@import "vars";
+@import "mixins";
+
+body {
+  background-color: $body-bg;
+  color: $body-color;
+  font-family: $font-family-base;
+  font-weight: $font-weight-normal;
+  line-height: 1.56;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+
+h2, .h2 {
+}
+
+h3, .h3 {
+  font-size: 1.375rem;
+}
+
+h4, .h4 {
+  font-size: 1.125rem;
+}
+
+h5, .h5 {
+  font-size: 1rem;
+}
+
+.gray-bg {
+  background-color: $gray-100;
+}
+
+.bg-primary {
+  background-color: $primary !important;
+  color: $white;
+}
+
+.app-section {
+  padding-top: $spacer*5;
+  padding-bottom: $spacer*5;
+}
+
+.section-heading {
+  margin-bottom: $spacer*2;
+  position: relative;
+  @include clearfix();
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: $spacer*3;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $spacer*4;
+  }
+
+  h2 {
+    color: $primary;
+    font-size: 1.5rem;
+    margin-bottom: $spacer;
+    line-height: 1.4;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.2rem;
+    }
+  }
+
+  p {
+    font-size: 1.125rem;
+    color: $gray-600;
+    font-weight: 400;
+
+    @include media-breakpoint-up(md) {
+      padding: 0 20%;
+    }
+  }
+}
+
+.ncovi {
+  color: $primary;
+}
+
+.device-ios .btn-android {
+  display: none;
+}
+
+.device-android .btn-ios {
+  display: none;
+}
+
+// List Icon style
+.list-icon {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: $spacer*1.5 0 $spacer*1.5 $spacer*5;
+    position: relative;
+  }
+
+  .icon {
+    position: absolute;
+    left: 0;
+    top: $spacer*2;
+    height: $spacer*3.5;
+    line-height: $spacer*3.5;
+    text-align: center;
+    width: $spacer*3.5;
+
+    i {
+      font-size: 24px;
+      line-height: 58px;
+    }
+  }
+}
+
+.icon-rounded {
+  border-radius: 13px;
+}
+
+.icon-color-1 { background-color: #FFEBE2; color: #ff7c3f; }
+.icon-color-2 { background-color: #FDE7EC; color: #f25c7f; }
+.icon-color-3 { background-color: #E1DCFE; color: #3413f7; }
+.icon-color-4 { background-color: #E0F5E9; color: #2ebf6d; }
+.icon-color-5 { background-color: #E8D7F8; color: #9123ff; }
+.icon-color-6 { background-color: #FFEBE2; color: #ff7c3f; }
+.icon-color-7 { background-color: #FFEBE2; color: #ff7c3f; }
+
+// HEADER
+// --------------------------------------
+.app-header {
+  background: url(../images/header-bg.png) no-repeat center center darken($primary, 1%);
+  background-size: cover;
+  border-bottom: 1px solid rgba($white, .1);
+  padding: $spacer 0;
+  position: relative;
+  z-index: 200;
+  @include clearfix();
+
+  &.fixed-top {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+  }
+
+  .app-brand {
+    margin: 0;
+    @include clearfix();
+
+    a {
+      background-color: $white;
+      border-radius: 3px;
+      float: left;
+      display: block;
+      margin-right: $spacer;
+      max-width: $spacer*3.5;
+      width: 56px;
+      height: 56px;
+      padding: $spacer/4;
+      vertical-align: middle;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    h1 {
+      font-size: $font-size-base;
+      color: $white;
+      padding-top: $spacer/2;
+      line-height: 1.5;
+      vertical-align: middle;
+
+      @include media-breakpoint-up(md) {
+        font-size: $h5-font-size;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: $h3-font-size;
+      }
+    }
+  }
+}
+
+.actions-wrap {
+  .btn-download {
+    background-color: rgba($black, .2);
+    border: 0;
+    border-radius: 7px;
+    color: $white;
+    padding-left: $spacer*3.5;
+    padding-right: $spacer;
+    position: relative;
+    text-align: left;
+    opacity: .85;
+    transition: all 0.25s ease-in-out;
+
+    &.btn-primary {
+      background-color: #0569c8;
+
+      &:hover, &:focus, &:active {
+        background-color: darken(#0569c8, 5%);
+      }
+    }
+
+    &:hover, &:focus, &:active {
+      background-color: darken($primary, 5%);
+      box-shadow: 0 2px 5px rgba($black, .3);
+      opacity: 1;
+    }
+
+    &:first-child {
+      margin-right: $spacer;
+    }
+
+    i {
+      color: $white;
+      font-size: 28px;
+      position: absolute;
+      left: $spacer;
+      top: 12px;
+    }
+
+    span {
+      display: block;        
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.app-download {
+  background: url(../images/hero-bg.png) no-repeat center center;
+
+  .section-heading {
+    h2 {
+      color: $white;
+    }
+  }
+
+  .actions-wrap {
+    .btn {
+      color: $white;  
+
+      i {
+        color: $white;
+      }
+    }
+  }
+}
+
+// HERO
+// --------------------------------------
+.app-hero {
+  background: url(../images/hero-bg.png) no-repeat center bottom $primary;
+  color: $white;
+  position: relative;
+  padding-top: $spacer*4;
+  padding-bottom: 0;
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: $spacer*7;    
+  }
+
+  .container {
+    z-index: 100;
+  }
+
+  .app-intro {
+    font-size: 18px;
+
+    @include media-breakpoint-up(lg) {
+    }
+  }
+
+  h2 {
+    font-size: $h3-font-size;
+    line-height: 1.5;
+
+    @include media-breakpoint-up(lg) {
+
+    }
+  }
+
+  p {
+    opacity: 0.85;
+  }
+
+  // Screenshot
+  .app-screenshot {
+    text-align: center;
+    overflow: hidden;
+    width: 350px;
+    right: 0;
+    position: absolute;
+    z-index: 200;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .actions-wrap {
+    text-align: center;
+  }
+
+  .app-download {
+    .btn-download {
+      background-color: $primary;
+      border: 2px solid rgba($white, .5);
+      border-radius: $border-radius-lg;
+      color: $white;
+      padding-left: $spacer*3.5;
+
+      &:hover, &:focus, &:active {
+        border-color: $white;
+      }
+
+      i {
+        color: $white;
+      }
+    }
+  }
+
+  .hero-footer {
+    height: 100px;
+    z-index: 50;
+  }
+
+  .hero-footer img {
+    position: absolute;
+    left: -1px;
+    right: 0;
+    bottom: -2px;
+    z-index: 1;
+    width: calc(100% + 2px);
+    margin: 0 auto;
+  }
+}
+
+// APP GUIDES
+// --------------------------------------
+.app-benefit {
+  .section-heading {
+    margin-bottom: $spacer*3;
+  }
+
+}
+
+// APP GUIDES
+// --------------------------------------
+.app-features {
+  border-bottom: 1px solid $gray-200;
+  padding: $spacer*6 0 $spacer*6;
+}
+
+
+// APP GUIDES
+// --------------------------------------
+.app-guides {
+  padding: $spacer*6 0 $spacer*6;
+
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(md) {
+      flex-wrap: nowrap;
+    }
+
+    .step {
+      padding: $spacer $spacer*2;
+      flex-basis: 100%;
+      position: relative;
+
+      @include media-breakpoint-up(md) {
+        flex-basis: 33.33%;
+      }
+
+      &:before {
+        border-bottom: 2px dashed $gray-300;
+        content: "";
+        display: none;
+        position: absolute;
+        left: 50px;
+        right: 0;
+        top: 50px;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+
+      &:after {
+        color: $gray-300;
+        content: "\f178";
+        font-family: "Font Awesome 5 Pro";
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 39px;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+
+      &:last-child {
+        &:before {
+          display: none;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+
+      .icon {
+        display: block;
+        height: $spacer*4;
+        line-height: $spacer*4;
+        margin-bottom: $spacer*2;
+        text-align: center;
+        position: relative;
+        width: $spacer*4;
+
+        .badge {
+          background-color: $white;
+          box-shadow: 0 2px 5px rgba($black, 0.1);
+          border-radius: 50%;
+          color: $gray-800;
+          font-weight: 700;
+          font-size: 15px;
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          height: 28px;
+          line-height: 20px;
+          text-align: center;
+          width: 28px;
+
+        }
+
+        i {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
+
+
+// FAQS
+// --------------------------------------
+.covid-faqs {
+  .card {
+    background-color: transparent;
+    border-radius: 0;
+    border: 0;
+    margin-bottom: $spacer/2;
+
+    .card-header {
+      background: darken($gray-100, 2%);
+      border-bottom: 1px solid $gray-300;
+      padding: 0;
+
+      .btn-link {
+        color: $body-color;
+        display: block;
+        font-size: $h5-font-size;
+        font-weight: 500;
+        padding: $spacer/1.5 $spacer;
+        text-align: left;
+        width: 100%;
+
+        &:hover, &:focus, &:active {
+          color: $primary;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .card-body {
+      background-color: $white;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+}
+
+  // Box
+  .box {
+    background-color: $white;
+    box-shadow: 0 2px 5px rgba($black, .1);
+    border-radius: 13px;
+    height: 100%;
+    padding: $spacer;
+    padding-top: $spacer*3;
+    position: relative;
+    transition: all 0.25s ease-in-out;
+    text-align: center;
+
+    &:hover {
+      box-shadow: 0 2px 15px rgba($black, .2);
+      margin-top: -$spacer;
+      margin-bottom: $spacer;
+    }
+
+    .media {
+      display: block;
+      margin-bottom: $spacer*2;
+      text-align: center;
+
+      img {
+        max-width: $spacer*5;
+      }
+    }
+
+    .icon {
+      background-color: lighten($primary, 20%);
+      border-radius: 13px;
+      color: $white;
+      position: absolute;
+      left: 50%;
+      top: -20px;
+      margin-left: -20px;
+      height: $spacer*3;
+      line-height: $spacer*3;
+      text-align: center;
+      width: $spacer*3;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    h3 {
+      font-weight: 600;
+      margin-bottom: $spacer;
+      line-height: 1.5;
+    }
+
+    p {
+    }
+  }
+
+
+// APP FOOTER
+// --------------------------------------
+.app-footer {
+  background-color: darken($primary, 20%);
+  color: $gray-300;
+  padding: $spacer*1.5 0;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: $white;
+    border-bottom: 1px dotted $white;
+
+    &:hover, &:focus, &:active {
+      border-bottom: 1px solid $white;
+      text-decoration: none;
+    }
+  }
+}
+
+.scroll-top {
+  background-color: $primary;
+  border: 0;
+  border-radius: 7px;
+  color: $white;
+  display: block;
+  opacity: 0;
+  height: $spacer*3;
+  position: fixed;
+  right: $spacer*2;
+  bottom: $spacer*2;
+  transition: all 0.25s ease-in-out;
+  text-align: center;
+  width: $spacer*3;
+
+  &:hover, &:focus, &:active {
+    background-color: $green;
+  }
+
+  &.open {
+    opacity: 1;
+  }
+}
